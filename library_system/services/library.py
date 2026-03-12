@@ -1,5 +1,7 @@
-from utils.file_handler import save_books, load_books
-from models.book import Book
+from turtle import title
+
+from utils import save_books, load_books
+from models import Book
 
 
 class Library:
@@ -11,21 +13,28 @@ class Library:
         book = Book(title, author, year)
         self.books.append(book)
         save_books(self.books)
+        print(f"{title} added to library successfully.")
 
     def remove_book(self, title):
         self.books = [b for b in self.books if b.title != title]
         save_books(self.books)
+        print(f"{title} removed from library successfully.")
 
     def show_books(self):
         if not self.books:
             print("No books in library.")
         for book in self.books:
+            print("Available books in library:")
             print(book)
 
     def search_book(self, keyword):
         results = [b for b in self.books if keyword.lower() in b.title.lower()]
-        for r in results:
-            print(r)
+        if results:
+            print(f"Search results for '{keyword}':")
+            for r in results:
+                print(r)
+        else:
+            print(f"No books found with the keyword '{keyword}'.")
 
     def borrow_book(self, title):
         for book in self.books:

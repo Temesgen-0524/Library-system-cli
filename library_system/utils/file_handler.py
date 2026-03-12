@@ -1,13 +1,12 @@
-from models.book import Book
+from models import Book
 
-FILE_PATH = "data/books.txt"
-
+FILE_PATH = "library_system/data/books.txt"
 
 def save_books(books):
     with open(FILE_PATH, "w") as f:
         for book in books:
             f.write(f"{book.title},{book.author},{book.year},{book.available}\n")
-
+        # print(f"{book.title} added to file successfully.")
 
 def load_books():
     books = []
@@ -25,7 +24,7 @@ def load_books():
                 )
 
                 books.append(book)
-
+            print(f"{book.title} loaded from file successfully.")
     except FileNotFoundError:
         print("Books file not found. Creating new one.")
 

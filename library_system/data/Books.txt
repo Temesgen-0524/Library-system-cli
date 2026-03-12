@@ -1,0 +1,8 @@
+think and grow rich,napolion hill,2023,True
+atomic habit,jemes clear,2012,True
+the powor of now,some one,2033,True
+rich dad poor dad,some person,2003,True
+ego is the enemy,rayan holiday,2012,True
+aaa,vvv,1212,True
+aaa,bbb,1213,True
+1234,1s,123,True
